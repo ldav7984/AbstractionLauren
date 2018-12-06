@@ -12,7 +12,7 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
 {
 
     //MARK:- Lifecycle  methods
-    public override func viewDidLoad() -> Void
+    public override func viewDidLoad()
     {
         super.viewDidLoad()
         
@@ -40,9 +40,9 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
     //MARK: Helper method to retrieve the correct ViewController based on the data member
     private func newAbstractionViewController(abstractionLevel : String) -> UIViewController
     {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:
-            "\(abstractionLevel)ViewController")
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
     }
+    
     
     //Mark:- Datasource required methods
     ///Swipe left
@@ -69,6 +69,7 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
         }
         return orderedAbstractionViews[previousIndex]
     }
+    
     ///Swipe right
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
@@ -95,6 +96,23 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
         return orderedAbstractionViews[nextIndex]
     }
     
+    //MARK:- Optional support for the dots in the UIPageViewController
+    /*
+    public func presentationCount(for pageViewConroller: UIPageViewController) -> Int
+    {
+        return orderedAbstractionViews.count
+    }
+    
+    public func presentationIndex(for pageViewController: UIPageViewController) -> Int
+    {
+        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = orderedAbstractionViews.index(of: firstViewController)
+            else
+        {
+            return 0
+        }
+        return firstViewControllerIndex
+    }
+    */
 
     /*
     // MARK: - Navigation
