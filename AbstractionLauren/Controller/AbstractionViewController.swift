@@ -11,21 +11,18 @@ import UIKit
 public class AbstractionViewController: UIPageViewController, UIPageViewControllerDataSource
 {
 
-    //MARK:- Lifecycle  methods
+    //MARK:- Lifecycle methods
     public override func viewDidLoad()
     {
         super.viewDidLoad()
         
         if let firstViewController = orderedAbstractionViews.first
         {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
+            setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
     }
     
-    //MARK: -Data members
+    //MARK:- Data members
     private lazy var orderedAbstractionViews : [UIViewController] =
     {
         return [
@@ -37,7 +34,7 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
         ]
     } ()
     
-    //MARK: Helper method to retrieve the correct ViewController based on the data member
+    //MARK:- Helper method to retrieve the correct ViewController based on the data member
     private func newAbstractionViewController(abstractionLevel : String) -> UIViewController
     {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(abstractionLevel)ViewController")
@@ -51,7 +48,7 @@ public class AbstractionViewController: UIPageViewController, UIPageViewControll
         guard let viewControllerIndex = orderedAbstractionViews.index(of: viewController)
             else
         {
-                return nil
+            return nil
         }
         
         let previousIndex = viewControllerIndex - 1
