@@ -12,7 +12,11 @@
         <!--Abstraction View Controller-->
         <scene sceneID="1Si-z4-w8O">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="yhB-7z-bDa" customClass="AbstractionViewController" customModule="AbstractionLauren" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="yhB-7z-bDa" customClass="AbstractionViewController" customModule="AbstractionLauren" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="e3r-xN-6gz" kind="showDetail" id="kFy-rL-aXT"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vq7-aE-ntJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2041" y="-546"/>
@@ -103,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AbstrByteCode" translatesAutoresizingMaskIntoConstraints="NO" id="8An-Vg-U6d">
-                                <rect key="frame" x="16" y="29" width="344" height="353"/>
+                                <rect key="frame" x="15.5" y="29" width="344" height="353"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
